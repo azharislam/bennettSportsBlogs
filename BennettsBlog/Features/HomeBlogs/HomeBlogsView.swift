@@ -8,19 +8,54 @@
 import SwiftUI
 
 struct HomeBlogsView: View {
+    @StateObject private var viewModel = HomeBlogsViewModel()
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            if viewModel.isLoading {
+                ProgressView()
+            } else if let error = viewModel.apiError {
+                Text("Error: \(error.localizedDescription)")
+            } else {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: 16) {
+                        ForEach(viewModel.blogs, id: \.id) { blog in
+                            BlogCardView(blog: blog)
+                                .onTapGesture {
+                                    print("GO TO DETAIL VIEW")
+                                }
+                        }
+                    }
+                }
+                .padding()
+            }
         }
-        .padding()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct BlogCardView: View {
+    var blog: BlogsModel
+
+    var body: some View {
+        VStack {
+            if let url = URL(string: blog.urls.regular) {
+                AsyncImage(url: url) { image in
+                    image
+                        .resizable()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 150, height: 200)
+                .cornerRadius(10)
+                .shadow(radius: 5)
+            }
+        }
+    }
+}
+
+struct HomeBlogsView_Previews: PreviewProvider {
     static var previews: some View {
         HomeBlogsView()
     }
 }
+

@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 
 struct HomeBlogsView: View {
     @StateObject private var viewModel = HomeBlogsViewModel()
-
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -21,14 +21,14 @@ struct HomeBlogsView: View {
                 }
                 .padding(.bottom)
             }
-            .navigationTitle("Latest Blog")
+            .navigationTitle(Constants.HomeBlogs.navigationTitle)
             .padding(.top, 10)
             .onAppear {
                 viewModel.fetchPhotos()
             }
         }
     }
-
+    
     @ViewBuilder
     private var loadingOrErrorView: some View {
         if viewModel.isLoading {
@@ -37,11 +37,11 @@ struct HomeBlogsView: View {
             Text(error.localizedDescription)
         }
     }
-
+    
     @ViewBuilder
     private var headlineBlogView: some View {
         if let headlineBlog = viewModel.headlineBlog {
-            NavigationLink(destination: BlogDetailView(blogPost: headlineBlog)) {
+            NavigationLink(destination: BlogDetailView(viewModel: BlogDetailViewModel(blogPost: headlineBlog))) {
                 VStack(alignment: .leading) {
                     WebImage(url: headlineBlog.urls.full)
                         .resizable()
@@ -50,29 +50,29 @@ struct HomeBlogsView: View {
                         .clipped()
                         .padding([.leading, .trailing, .top])
                     
-                    Text((headlineBlog.altDescription ?? headlineBlog.description ?? "A blog post for users to tap on.")
+                    Text((headlineBlog.altDescription ?? headlineBlog.description ?? Constants.HomeBlogs.defaultBlogDescription)
                         .capitalizingFirstLetter())
-                        .font(.custom("Arial", size: 20))
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(.black)
-                        .padding([.leading, .trailing, .bottom])
+                    .font(.custom("Arial", size: 20))
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(.black)
+                    .padding([.leading, .trailing, .bottom])
                 }
                 .padding(.bottom)
             }
             .foregroundColor(.black)
         }
     }
-
+    
     private var categoriesView: some View {
         ForEach(Array(viewModel.blogCategories.enumerated()), id: \.offset) { index, blogs in
-            Text("Category \(index + 1)")
+            Text("\(Constants.HomeBlogs.categoryTitle) \(index + 1)")
                 .font(.title2)
                 .bold()
                 .padding(.leading)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
                     ForEach(blogs, id: \.id) { blog in
-                        NavigationLink(destination: BlogDetailView(blogPost: blog)) {
+                        NavigationLink(destination: BlogDetailView(viewModel: BlogDetailViewModel(blogPost: blog))) {
                             BlogThumbnailView(blogPost: blog)
                                 .frame(width: 150)
                         }
@@ -90,4 +90,3 @@ struct HomeBlogsView_Previews: PreviewProvider {
         HomeBlogsView()
     }
 }
-

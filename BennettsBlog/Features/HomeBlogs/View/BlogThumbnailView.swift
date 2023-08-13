@@ -18,13 +18,13 @@ struct BlogThumbnailView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 150, height: 150)
                 .clipped()
-            Text((blogPost.altDescription ?? blogPost.description ?? "This is a blog post for users to tap on.")
+            Text((blogPost.altDescription ?? blogPost.description ?? Constants.HomeBlogs.defaultBlogDescription)
                 .capitalizingFirstLetter())
                 .font(.custom("Arial", size: 12))
                 .multilineTextAlignment(.leading)
                 .foregroundColor(.black)
                 .lineLimit(3)
-                .frame(maxWidth: .infinity, alignment: .leading) // Set the alignment here
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 5)
         }
     }

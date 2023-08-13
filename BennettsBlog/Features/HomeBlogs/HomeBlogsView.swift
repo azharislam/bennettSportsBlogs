@@ -8,47 +8,50 @@
 import SwiftUI
 
 struct HomeBlogsView: View {
+
     @StateObject private var viewModel = HomeBlogsViewModel()
 
     var body: some View {
-        VStack {
-            if viewModel.isLoading {
-                ProgressView()
-            } else if let error = viewModel.apiError {
-                Text("Error: \(error.localizedDescription)")
-            } else {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(spacing: 16) {
-                        ForEach(viewModel.blogs, id: \.id) { blog in
-                            BlogCardView(blog: blog)
-                                .onTapGesture {
-                                    print("GO TO DETAIL VIEW")
+        NavigationView {
+            Group {
+                if viewModel.isLoading {
+                    ProgressView()
+                } else if let error = viewModel.error {
+                    Text(error.localizedDescription)
+                } else {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 16) {
+                            ForEach(viewModel.photos, id: \.id) { photo in
+                                NavigationLink(destination: BlogDetailView(photo: photo)) {
+                                    BlogThumbnailView(photo: photo)
                                 }
+                            }
                         }
+                        .padding()
                     }
                 }
-                .padding()
+            }
+            .navigationTitle("Blogs")
+            .onAppear {
+                viewModel.fetchPhotos()
             }
         }
     }
 }
 
-struct BlogCardView: View {
-    var blog: BlogsModel
+struct BlogThumbnailView: View {
+    let photo: Photo
 
     var body: some View {
         VStack {
-            if let url = URL(string: blog.urls.regular) {
-                AsyncImage(url: url) { image in
-                    image
-                        .resizable()
-                } placeholder: {
-                    ProgressView()
-                }
-                .frame(width: 150, height: 200)
-                .cornerRadius(10)
-                .shadow(radius: 5)
-            }
+            Image(uiImage: UIImage(data: try! Data(contentsOf: photo.urls.thumb)) ?? UIImage())
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 150, height: 150)
+                .clipped()
+            Text(photo.description ?? "No Description")
+                .font(.caption)
+                .lineLimit(1)
         }
     }
 }

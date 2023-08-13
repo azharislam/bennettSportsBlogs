@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct BlogDetailView: View {
+    let photo: Photo
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image(uiImage: UIImage(data: try! Data(contentsOf: photo.urls.full)) ?? UIImage())
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity)
+            Text(photo.description ?? "No Description")
+                .padding()
+        }
+        .navigationTitle("Blog Detail")
     }
 }
 
-struct BlogDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        BlogDetailView()
-    }
-}
+//struct BlogDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BlogDetailView()
+//    }
+//}

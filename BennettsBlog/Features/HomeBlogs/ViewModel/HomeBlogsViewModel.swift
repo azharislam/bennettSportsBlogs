@@ -6,32 +6,34 @@
 //
 
 import Foundation
-
 import SwiftUI
 import Combine
 
 class HomeBlogsViewModel: ObservableObject {
-    // Published properties that the view can bind to
-    @Published var blogs: [BlogsModel] = []
+
+    private var apiService: APIServiceProtocol
+    private var cancellables = Set<AnyCancellable>()
+
+    @Published var photos: [Photo] = []
     @Published var isLoading: Bool = false
-    @Published var apiError: APIError?
+    @Published var error: APIError?
 
-    private var cancellables: Set<AnyCancellable> = []
-
-    init() {
-        fetchBlogs()
+    init(apiService: APIServiceProtocol = APIService()) {
+        self.apiService = apiService
     }
 
-    func fetchBlogs() {
+    func fetchPhotos() {
         self.isLoading = true
-        APIService.shared.fetchBlogs { [weak self] result in
-            switch result {
-            case .success(let blogs):
-                self?.blogs = blogs
-            case .failure(let error):
-                self?.apiError = error
+        apiService.fetchPhotos { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let photos):
+                    self?.photos = photos
+                case .failure(let error):
+                    self?.error = error as? APIError
+                }
+                self?.isLoading = false
             }
-            self?.isLoading = false
         }
     }
 }

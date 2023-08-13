@@ -52,10 +52,12 @@ struct HomeBlogsView: View {
                     
                     Text((headlineBlog.altDescription ?? headlineBlog.description ?? "A blog post for users to tap on.")
                         .capitalizingFirstLetter())
-                        .font(.headline)
+                        .font(.custom("Arial", size: 20))
+                        .multilineTextAlignment(.leading)
                         .foregroundColor(.black)
                         .padding([.leading, .trailing, .bottom])
                 }
+                .padding(.bottom)
             }
             .foregroundColor(.black)
         }
@@ -72,12 +74,14 @@ struct HomeBlogsView: View {
                     ForEach(blogs, id: \.id) { blog in
                         NavigationLink(destination: BlogDetailView(blogPost: blog)) {
                             BlogThumbnailView(blogPost: blog)
+                                .frame(width: 150)
                         }
                     }
                 }
                 .padding(.horizontal)
             }
         }
+        .padding(.bottom)
     }
 }
 

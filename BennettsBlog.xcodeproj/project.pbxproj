@@ -11,9 +11,6 @@
 		D0949F0A2A87DF1C00585482 /* HomeBlogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0949F092A87DF1C00585482 /* HomeBlogsView.swift */; };
 		D0949F0C2A87DF1D00585482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0949F0B2A87DF1D00585482 /* Assets.xcassets */; };
 		D0949F0F2A87DF1D00585482 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0949F0E2A87DF1D00585482 /* Preview Assets.xcassets */; };
-		D0949F192A87DF1D00585482 /* BennettsBlogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0949F182A87DF1D00585482 /* BennettsBlogTests.swift */; };
-		D0949F232A87DF1D00585482 /* BennettsBlogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0949F222A87DF1D00585482 /* BennettsBlogUITests.swift */; };
-		D0949F252A87DF1D00585482 /* BennettsBlogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0949F242A87DF1D00585482 /* BennettsBlogUITestsLaunchTests.swift */; };
 		D0949F3C2A88237000585482 /* HomeBlogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0949F3B2A88237000585482 /* HomeBlogsViewModel.swift */; };
 		D0949F3E2A88238A00585482 /* BlogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0949F3D2A88238A00585482 /* BlogDetailView.swift */; };
 		D0949F422A8823BB00585482 /* BlogsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0949F412A8823BB00585482 /* BlogsModel.swift */; };
@@ -24,6 +21,10 @@
 		D0949F4F2A8968D800585482 /* String + Capitalizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0949F4E2A8968D800585482 /* String + Capitalizing.swift */; };
 		D0949F512A89694000585482 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0949F502A89694000585482 /* APIError.swift */; };
 		D0949F532A89695700585482 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0949F522A89695700585482 /* APIConfig.swift */; };
+		D0949F572A896C5200585482 /* HomeBlogsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0949F562A896C5200585482 /* HomeBlogsViewModelTests.swift */; };
+		D0949F5A2A896EA100585482 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D0949F592A896EA100585482 /* SDWebImage */; };
+		D0949F5D2A896F8900585482 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D0949F5C2A896F8900585482 /* SDWebImage */; };
+		D0949F5F2A8973B800585482 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0949F5E2A8973B800585482 /* ExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +51,7 @@
 		D0949F0B2A87DF1D00585482 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0949F0E2A87DF1D00585482 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0949F142A87DF1D00585482 /* BennettsBlogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BennettsBlogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0949F182A87DF1D00585482 /* BennettsBlogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BennettsBlogTests.swift; sourceTree = "<group>"; };
 		D0949F1E2A87DF1D00585482 /* BennettsBlogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BennettsBlogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0949F222A87DF1D00585482 /* BennettsBlogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BennettsBlogUITests.swift; sourceTree = "<group>"; };
-		D0949F242A87DF1D00585482 /* BennettsBlogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BennettsBlogUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D0949F3B2A88237000585482 /* HomeBlogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBlogsViewModel.swift; sourceTree = "<group>"; };
 		D0949F3D2A88238A00585482 /* BlogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailView.swift; sourceTree = "<group>"; };
 		D0949F412A8823BB00585482 /* BlogsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogsModel.swift; sourceTree = "<group>"; };
@@ -63,6 +61,8 @@
 		D0949F4E2A8968D800585482 /* String + Capitalizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Capitalizing.swift"; sourceTree = "<group>"; };
 		D0949F502A89694000585482 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		D0949F522A89695700585482 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		D0949F562A896C5200585482 /* HomeBlogsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBlogsViewModelTests.swift; sourceTree = "<group>"; };
+		D0949F5E2A8973B800585482 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0949F5A2A896EA100585482 /* SDWebImage in Frameworks */,
 				D0949F482A895DCC00585482 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0949F5D2A896F8900585482 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +99,7 @@
 				D0949F312A8822E200585482 /* Tests */,
 				D0949F062A87DF1C00585482 /* BennettsBlog */,
 				D0949F052A87DF1C00585482 /* Products */,
+				D0949F5B2A896F8900585482 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,25 +137,16 @@
 		D0949F172A87DF1D00585482 /* BennettsBlogTests */ = {
 			isa = PBXGroup;
 			children = (
-				D0949F182A87DF1D00585482 /* BennettsBlogTests.swift */,
+				D0949F562A896C5200585482 /* HomeBlogsViewModelTests.swift */,
+				D0949F5E2A8973B800585482 /* ExtensionTests.swift */,
 			);
 			path = BennettsBlogTests;
-			sourceTree = "<group>";
-		};
-		D0949F212A87DF1D00585482 /* BennettsBlogUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D0949F222A87DF1D00585482 /* BennettsBlogUITests.swift */,
-				D0949F242A87DF1D00585482 /* BennettsBlogUITestsLaunchTests.swift */,
-			);
-			path = BennettsBlogUITests;
 			sourceTree = "<group>";
 		};
 		D0949F312A8822E200585482 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				D0949F172A87DF1D00585482 /* BennettsBlogTests */,
-				D0949F212A87DF1D00585482 /* BennettsBlogUITests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -244,6 +238,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D0949F5B2A896F8900585482 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,6 +263,7 @@
 			name = BennettsBlog;
 			packageProductDependencies = (
 				D0949F472A895DCC00585482 /* SDWebImageSwiftUI */,
+				D0949F592A896EA100585482 /* SDWebImage */,
 			);
 			productName = BennettsBlog;
 			productReference = D0949F042A87DF1C00585482 /* BennettsBlog.app */;
@@ -281,6 +283,9 @@
 				D0949F162A87DF1D00585482 /* PBXTargetDependency */,
 			);
 			name = BennettsBlogTests;
+			packageProductDependencies = (
+				D0949F5C2A896F8900585482 /* SDWebImage */,
+			);
 			productName = BennettsBlogTests;
 			productReference = D0949F142A87DF1D00585482 /* BennettsBlogTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -337,6 +342,7 @@
 			mainGroup = D0949EFB2A87DF1C00585482;
 			packageReferences = (
 				D0949F462A895DCC00585482 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				D0949F582A896EA100585482 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = D0949F052A87DF1C00585482 /* Products */;
 			projectDirPath = "";
@@ -398,7 +404,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0949F192A87DF1D00585482 /* BennettsBlogTests.swift in Sources */,
+				D0949F5F2A8973B800585482 /* ExtensionTests.swift in Sources */,
+				D0949F572A896C5200585482 /* HomeBlogsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,8 +413,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0949F232A87DF1D00585482 /* BennettsBlogUITests.swift in Sources */,
-				D0949F252A87DF1D00585482 /* BennettsBlogUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,6 +730,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		D0949F582A896EA100585482 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -732,6 +745,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D0949F462A895DCC00585482 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		D0949F592A896EA100585482 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0949F582A896EA100585482 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		D0949F5C2A896F8900585482 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0949F582A896EA100585482 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

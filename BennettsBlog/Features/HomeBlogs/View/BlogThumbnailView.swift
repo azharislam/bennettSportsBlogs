@@ -20,10 +20,13 @@ struct BlogThumbnailView: View {
                 .clipped()
             Text((blogPost.altDescription ?? blogPost.description ?? "This is a blog post for users to tap on.")
                 .capitalizingFirstLetter())
-                .font(.body)
+                .font(.custom("Arial", size: 12))
+                .multilineTextAlignment(.leading)
                 .foregroundColor(.black)
-                .frame(maxWidth: 150, alignment: .leading)
+                .lineLimit(3)
+                .frame(maxWidth: .infinity, alignment: .leading) // Set the alignment here
                 .padding(.top, 5)
         }
     }
 }
+

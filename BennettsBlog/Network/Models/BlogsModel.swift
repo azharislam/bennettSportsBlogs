@@ -1,6 +1,6 @@
 import Foundation
 
-struct Photo: Codable {
+struct Blog: Codable {
     let id: String
     let createdAt: Date
     let updatedAt: Date
@@ -8,12 +8,14 @@ struct Photo: Codable {
     let height: Int
     let color: String?
     let description: String?
+    let altDescription: String?
     let urls: URLS
     
     enum CodingKeys: String, CodingKey {
-           case id, width, height, color, description, urls
-           case createdAt = "created_at"
-           case updatedAt = "updated_at"
+        case id, width, height, color, description, urls
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case altDescription = "alt_description"
     }
 }
 

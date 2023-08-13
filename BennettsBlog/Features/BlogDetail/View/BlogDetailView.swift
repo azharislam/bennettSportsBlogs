@@ -6,25 +6,21 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct BlogDetailView: View {
-    let photo: Photo
+    let blogPost: Blog
 
     var body: some View {
         VStack {
-            Image(uiImage: UIImage(data: try! Data(contentsOf: photo.urls.full)) ?? UIImage())
+            WebImage(url: blogPost.urls.full)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(maxWidth: .infinity)
-            Text(photo.description ?? "No Description")
+            Text((blogPost.description ?? blogPost.altDescription ?? "")
+                .capitalizingFirstLetter())
                 .padding()
         }
         .navigationTitle("Blog Detail")
     }
 }
-
-//struct BlogDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BlogDetailView()
-//    }
-//}
